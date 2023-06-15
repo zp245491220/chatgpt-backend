@@ -5,6 +5,7 @@ import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.BooleanUtil;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.crypto.digest.MD5;
 import com.hncboy.chatgpt.base.constant.ApplicationConstant;
 import com.hncboy.chatgpt.base.domain.entity.EmailVerifyCodeDO;
 import com.hncboy.chatgpt.base.domain.entity.FrontUserBaseDO;
@@ -27,6 +28,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 import static com.hncboy.chatgpt.base.constant.ApplicationConstant.FRONT_JWT_EXTRA_USER_ID;
@@ -184,4 +186,6 @@ public class EmailAbstractRegisterStrategy extends AbstractRegisterTypeStrategy 
 
         return LoginInfoVO.builder().token(StpUtil.getTokenValue()).baseUserId(userInfo.getBaseUserId()).build();
     }
+
+
 }

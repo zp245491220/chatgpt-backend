@@ -6,13 +6,14 @@ WORKDIR /app
 # 构建项目
 RUN mvn clean package  --settings settings.xml
 
+
 FROM openjdk:17-jdk-slim
 # 复制生成的 jar 文件到容器中
-COPY --from=0 /app/chatgpt-bootstrap/target/*.jar /app/app.jar
+COPY --from=0 /app/chatgpt-bootstrap/target/*.jar /project/gpt-service.jar
+
 # 设置工作目录
-WORKDIR /app
-# 暴露端口
-EXPOSE 3002
+WORKDIR /project
+
 # 设置时区为 Asia/Shanghai
 ENV TZ=Asia/Shanghai
 
@@ -22,5 +23,9 @@ RUN apt-get install -y fontconfig
 # 设置容器的时区
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+
 # 定义启动命令
-ENTRYPOINT ["sh","-c","java -jar app.jar"]
+ENTRYPOINT ["sh", "-c" , "java ${JAVA_OPTS}  -jar gpt-service.jar ${0} ${@}"]
+
+# 暴露端口
+EXPOSE 8080

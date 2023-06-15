@@ -21,7 +21,7 @@ import java.nio.charset.StandardCharsets;
  * @author CoDeleven
  */
 @Slf4j
-@Service
+//@Service
 public class EmailServiceImpl implements EmailService {
 
     private final EmailConfig emailConfig;
@@ -79,6 +79,6 @@ public class EmailServiceImpl implements EmailService {
      * @return 响应
      */
     protected String sendMessage(String targetEmail, String content) {
-        return MailUtil.send(mailAccount, targetEmail, "【StarGPT】账号注册", content, true);
+        return MailUtil.send(mailAccount, targetEmail, "【SMY-GPT】账号注册", content, true);
     }
 }

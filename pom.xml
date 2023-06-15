@@ -10,9 +10,9 @@
 
     <developers>
         <developer>
-            <name>hncboy</name>
-            <email>619452863@qq.com</email>
-            <url>https://github.com/hncboy</url>
+            <name>smy</name>
+            <email>245491220@qq.com</email>
+            <url>https://github.com/zhongda</url>
         </developer>
     </developers>
 
@@ -147,6 +147,24 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+
+        <!-- aliyun-email -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>dm20151123</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-dm</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <!-- aliyun-email -->
     </dependencies>
 
     <issueManagement>
