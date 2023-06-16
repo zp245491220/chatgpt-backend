@@ -1,11 +1,5 @@
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: ${MYSQL_USER_NAME:zhongda}
-    password: ${MYSQL_PASSWORD:Autu_passowrd2022@!}
-    url: ${JDBC_URL:jdbc:mysql://rm-j6cj22687w6hoy9v92o.mysql.rds.aliyuncs.com:3306/ai_gpt?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true}
-  application:
-     name: gpt-service
+
 
 #mybatis-plus:
 #  configuration:
@@ -14,12 +8,13 @@ spring:
 
 chat:
   # OpenAI API Key - https://platform.openai.com/account/api-keys
+  openai_api_key: ${CHAT_OPENAI_API_KEY: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}
   # change this to an `accessToken` extracted from the ChatGPT site's `https://chat.openai.com/api/auth/session` response
   openai_access_token: ${CHAT_OPENAI_ACCESS_TOKEN:}
   # OpenAI API Base URL - https://api.openai.com/，要加/后缀
   openai_api_base_url: ${CHAT_OPENAI_API_BASE_URL:https://api.openai.com/}
   # API Model - https://platform.openai.com/docs/models apiKey 和 AccessToken mode 不一样
-  openai_api_model: ${CHAT_OPENAI_API_MODEL:}
+  openai_api_model: ${CHAT_OPENAI_API_MODEL:gpt-3.5-turbo-16k}
   # 反向代理地址 AccessToken 时使用
   api_reverse_proxy: ${CHAT_API_REVERSE_PROXY:}
   # 超时毫秒
@@ -68,3 +63,13 @@ sa-token:
   timeout: ${LOGIN_TIMEOUT_SECONDS:86400}
   token-name: satoken
 
+aliyun:
+  email:
+    enable: true
+    access-key: LTAInghMeWZJYrfN
+    secret: YwJ1tKjLSRwFwSIPwtgtNNk8Zb56hs
+    account-name: email@smy.cool
+    alias: SMY-Tec Team
+    region: cn-hangzhou
+    tag-name: smy
+    verificationRedirectUrl: ${EMAIL_VERIFY_REDIRECT_URL:http://smy.cool/#/emailValidation?type=email&verifyCode=}
