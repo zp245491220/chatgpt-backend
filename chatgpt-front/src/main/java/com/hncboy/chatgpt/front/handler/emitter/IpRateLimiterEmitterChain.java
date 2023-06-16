@@ -25,7 +25,7 @@ public class IpRateLimiterEmitterChain extends AbstractResponseEmitterChain {
             String ip = WebUtil.getIp();
             // 根据ip判断是够可放行
             Pair<Boolean, String> limitPair = RateLimiterHandler.allowRequest(ip);
-            if (limitPair.getKey()) {
+            if (Boolean.TRUE.equals(limitPair.getKey())) {
                 if (getNext() != null) {
                     getNext().doChain(request, emitter);
                 }

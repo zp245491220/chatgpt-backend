@@ -58,8 +58,9 @@ public class ChatMessageServiceImpl extends ServiceImpl<ChatMessageMapper, ChatM
         // 构建 emitter 处理链路
         ResponseEmitterChain ipRateLimiterEmitterChain = new IpRateLimiterEmitterChain();
         ResponseEmitterChain sensitiveWordEmitterChain = new SensitiveWordEmitterChain();
-        sensitiveWordEmitterChain.setNext(new ChatMessageEmitterChain());
+        ChatMessageEmitterChain chatMessageEmitterChain = new ChatMessageEmitterChain();
         ipRateLimiterEmitterChain.setNext(sensitiveWordEmitterChain);
+        sensitiveWordEmitterChain.setNext(chatMessageEmitterChain);
         ipRateLimiterEmitterChain.doChain(chatProcessRequest, emitter);
         return emitter;
     }

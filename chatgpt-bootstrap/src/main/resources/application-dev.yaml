@@ -14,7 +14,7 @@ spring:
 
 chat:
   # OpenAI API Key - https://platform.openai.com/account/api-keys
-  openai_api_key: ${CHAT_OPENAI_API_KEY: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}
+  openai_api_key: ${CHAT_OPENAI_API_KEY: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}
   # change this to an `accessToken` extracted from the ChatGPT site's `https://chat.openai.com/api/auth/session` response
   openai_access_token: ${CHAT_OPENAI_ACCESS_TOKEN:}
   # OpenAI API Base URL - https://api.openai.com/，要加/后缀
@@ -69,13 +69,13 @@ sa-token:
   timeout: ${LOGIN_TIMEOUT_SECONDS:86400}
   token-name: satoken
 
-aliyun:
-  email:
-    enable: true
-    access-key: LTAInghMeWZJYrfN
-    secret: YwJ1tKjLSRwFwSIPwtgtNNk8Zb56hs
-    account-name: email@smy.cool
-    alias: SMY-Tec Team
-    region: cn-hangzhou
-    tag-name: smy
-    verificationRedirectUrl: ${EMAIL_VERIFY_REDIRECT_URL:http://smy.cool/#/emailValidation?type=email&verifyCode=}
+# aliyun:
+#   email:
+#     enable: true
+#     access-key: LTAInghMeWZJYrfN
+#     secret: YwJ1tKjLSRwFwSIPwtgtNNk8Zb56hs
+#     account-name: email@smy.cool
+#     alias: SMY-Tec Team
+#     region: cn-hangzhou
+#     tag-name: smy
+#     verificationRedirectUrl: ${EMAIL_VERIFY_REDIRECT_URL:http://smy.cool/#/emailValidation?type=email&verifyCode=}
