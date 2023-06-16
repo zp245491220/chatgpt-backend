@@ -63,13 +63,3 @@ sa-token:
   timeout: ${LOGIN_TIMEOUT_SECONDS:86400}
   token-name: satoken
 
-aliyun:
-  email:
-    enable: true
-    access-key: LTAInghMeWZJYrfN
-    secret: YwJ1tKjLSRwFwSIPwtgtNNk8Zb56hs
-    account-name: email@smy.cool
-    alias: SMY-Tec Team
-    region: cn-hangzhou
-    tag-name: smy
-    verificationRedirectUrl: ${EMAIL_VERIFY_REDIRECT_URL:http://smy.cool/#/emailValidation?type=email&verifyCode=}
