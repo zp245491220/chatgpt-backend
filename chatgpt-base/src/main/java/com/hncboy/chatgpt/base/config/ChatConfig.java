@@ -175,6 +175,7 @@ public class ChatConfig implements InitializingBean {
     @Override
     public void afterPropertiesSet() {
         if (StrUtil.isBlank(openaiApiKey) && StrUtil.isBlank(openaiAccessToken)) {
+            //多key可以把这个检查去掉
             throw new RuntimeException("apiKey 或 accessToken 必须有值");
         }
 
