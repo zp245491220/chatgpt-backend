@@ -3,6 +3,7 @@ package com.hncboy.chatgpt.front.api.apikey;
 import cn.hutool.extra.spring.SpringUtil;
 import com.hncboy.chatgpt.base.config.ChatConfig;
 import com.hncboy.chatgpt.base.enums.ApiTypeEnum;
+import com.hncboy.chatgpt.base.keycenter.ChatKeyCenterHandler;
 import com.hncboy.chatgpt.base.util.OkHttpClientUtil;
 import com.unfbx.chatgpt.OpenAiStreamClient;
 import lombok.experimental.UtilityClass;
@@ -33,7 +34,7 @@ public class ApiKeyChatClientBuilder {
 
         return OpenAiStreamClient.builder()
                 .okHttpClient(okHttpClient)
-                .apiKey(Collections.singletonList(chatConfig.getOpenaiApiKey()))
+                .apiKey(Collections.singletonList(ChatKeyCenterHandler.getRandomIsUsableChatKey()))
                 .apiHost(chatConfig.getOpenaiApiBaseUrl())
                 .build();
     }
